@@ -10,7 +10,9 @@ class CategoriesMealsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final category = ModalRoute.of(context)!.settings.arguments as Category;
-
+    
+    //filtra as comidas por categorias
+    //se for true tem a comida na categoria na lista
     final categoryMeals = DUMMY_MEALS.where((meal) {
       return meal.categories.contains(category.id);
     }).toList();

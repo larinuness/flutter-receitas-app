@@ -11,6 +11,8 @@ enum Cost {
 }
 
 class Meal {
+  //id está como String mas poderia ser int tbm
+
   final String id;
   final List<String> categories;
   final String title;

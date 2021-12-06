@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'pages/categories_meals_page.dart';
-import 'pages/categories_page.dart';
 import 'pages/meal_details_page.dart';
+import 'pages/settings_page.dart';
+import 'pages/tabs_page.dart';
 import 'utils/app_routes.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: Colors.pink,
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
             .copyWith(secondary: Colors.amber),
         fontFamily: 'Raleway',
@@ -32,9 +34,10 @@ class MyApp extends StatelessWidget {
             ),
       ),
       routes: {
-        AppRoutes.home: (context) => const CategoriesPage(),
+        AppRoutes.home: (context) => const TabsPage(),
         AppRoutes.categoriesMeals: (context) => const CategoriesMealsPage(),
         AppRoutes.mealDetail: (context) => const MealDetailsPage(),
+        AppRoutes.settings: (context) => const SettingsPage(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/alguma-coisa') {
