@@ -51,6 +51,10 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  bool _isFavorite(Meal meal) {
+    return _favoriteMeals.contains(meal);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -81,6 +85,7 @@ class _MyAppState extends State<MyApp> {
             ),
         AppRoutes.mealDetail: (context) => MealDetailsPage(
               onToggleFavorite: _toggleFavorite,
+              isFavorite: _isFavorite,
             ),
         AppRoutes.settings: (context) => SettingsPage(
               onSettingsChange: _filterMeals,
