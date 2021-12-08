@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_receitas/components/main_drawer.dart';
-import 'package:flutter_receitas/pages/categories_page.dart';
-import 'package:flutter_receitas/pages/favorite_page.dart';
+import '../components/main_drawer.dart';
+import '../models/meal.dart';
+import 'categories_page.dart';
+import 'favorite_page.dart';
 
 class TabsPage extends StatefulWidget {
-  const TabsPage({Key? key}) : super(key: key);
+  final List<Meal> favoriteMeals;
+  const TabsPage({Key? key, required this.favoriteMeals}) : super(key: key);
 
   @override
   State<TabsPage> createState() => _TabsPageState();
 }
 
 class _TabsPageState extends State<TabsPage> {
+
+  @override
+  void initState(){
+    super.initState();
+    
+  }
   // int _selectedScreenIndex = 0;
 
   // final List<Widget> _screens = [
@@ -59,10 +67,12 @@ class _TabsPageState extends State<TabsPage> {
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
             CategoriesPage(),
-            FavoritePage(),
+            FavoritePage(
+              favoriteMeals: widget.favoriteMeals,
+            ),
           ],
         ),
       ),

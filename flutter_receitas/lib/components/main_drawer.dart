@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_receitas/utils/app_routes.dart';
+import '../utils/app_routes.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);

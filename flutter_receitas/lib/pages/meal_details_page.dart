@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_receitas/models/meal.dart';
+import '../models/meal.dart';
 
 class MealDetailsPage extends StatelessWidget {
-  const MealDetailsPage({Key? key}) : super(key: key);
+  final Function(Meal) onToggleFavorite;
+  const MealDetailsPage({Key? key, required this.onToggleFavorite}) : super(key: key);
 
   Widget _createSectionTitle(context, String title) {
     return Container(
@@ -91,7 +92,7 @@ class MealDetailsPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.star),
         onPressed: () {
-          Navigator.of(context).pop(meal);
+          onToggleFavorite(meal);
         },
       ),
     );

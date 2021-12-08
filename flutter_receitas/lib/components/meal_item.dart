@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_receitas/utils/app_routes.dart';
+import '../utils/app_routes.dart';
 import '../models/meal.dart';
 
 class MealItem extends StatelessWidget {
@@ -7,7 +7,18 @@ class MealItem extends StatelessWidget {
   const MealItem({Key? key, required this.meal}) : super(key: key);
 
   void _selectMeal(context) {
-    Navigator.pushNamed(context, AppRoutes.mealDetail, arguments: meal);
+    Navigator.pushNamed(
+      context,
+      AppRoutes.mealDetail,
+      arguments: meal,
+      //quando a rota acima for excluida(sair da tela), o then é chamado
+    ).then((result) {
+      if (result == null) {
+        print('Sem resultado');
+      } else {
+        print(result);
+      }
+    });
   }
 
   @override
