@@ -12,13 +12,13 @@ class MealItem extends StatelessWidget {
       AppRoutes.mealDetail,
       arguments: meal,
       //quando a rota acima for excluida(sair da tela), o then é chamado
-    ).then((result) {
-      if (result == null) {
-        print('Sem resultado');
-      } else {
-        print(result);
-      }
-    });
+    ); //.then((result) {
+    //   if (result == null) {
+    //     print('Sem resultado');
+    //   } else {
+    //     print(result);
+    //   }
+    // });
   }
 
   @override

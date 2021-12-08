@@ -69,7 +69,7 @@ class _TabsPageState extends State<TabsPage> {
         ),
         body: TabBarView(
           children: [
-            CategoriesPage(),
+            const CategoriesPage(),
             FavoritePage(
               favoriteMeals: widget.favoriteMeals,
             ),
